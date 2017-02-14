@@ -4,7 +4,7 @@
 public class Ex5_5Borum {
   public static void main(String[] args) {
     //Start with 20 pounds on the right side of the table
-    int p =20;
+    int p = 20;
     
     //Create header
     System.out.println("Kilograms\tPounds\t|\tPounds\tKilograms");

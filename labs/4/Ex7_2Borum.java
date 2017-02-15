@@ -37,7 +37,7 @@ public class Ex7_2Borum {
     int[] rev = new int[size];
     
     //Loop until the index reaches the end of the array
-    for(int i = 0; i < size - 1; i ++) {
+    for(int i = 0; i < size; i ++) {
       //Put the corresponding opposite indexed integer into the reverse array
       rev[i] = list[size - i - 1];
     }

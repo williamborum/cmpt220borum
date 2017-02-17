@@ -25,7 +25,7 @@ public class Ex7_8Borum {
       x ++;
     }
     
-    //Display what the user input for the ten integers and display the reverse using the method below
+    //Display the results
     System.out.println("The average is " + average(list));
   }
   

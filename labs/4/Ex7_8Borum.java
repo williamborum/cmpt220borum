@@ -13,7 +13,7 @@ public class Ex7_8Borum {
     System.out.print("Enter 10 values to find its average: ");
     
     int x = 0;
-    int t;
+    double t;
     //Initialize an array of size 10
     double[] list = new double[10];
     

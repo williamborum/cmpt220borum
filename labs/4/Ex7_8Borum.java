@@ -20,7 +20,7 @@ public class Ex7_8Borum {
     //Loop until the user enters at least 10 values
     while(x < 10) {
       //Get values from user and put them into the array in order
-      t = input.nextInt(); // JA: This had to read doubles, not integers
+      t = input.nextDouble(); // JA: This had to read doubles, not integers
       list[x] = t;
       x ++;
     }

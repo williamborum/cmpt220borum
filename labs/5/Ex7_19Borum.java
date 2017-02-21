@@ -1,7 +1,6 @@
 //William Borum
 //CS 220
 //Exercise 7.19
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ex7_19Borum {

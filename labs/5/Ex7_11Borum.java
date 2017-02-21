@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Ex7_11Borum {
   public static void main(String[] args) {
-  //Create a Scanner
+    //Create a Scanner
     Scanner input = new Scanner(System.in);
     
     System.out.print("Enter 10 values to get its mean and deviation: ");

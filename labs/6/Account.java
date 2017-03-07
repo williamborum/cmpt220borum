@@ -13,7 +13,7 @@ public class Account {
   Account() {
   }
   //Create Account object
-  Account(int newID, int newBalance) {
+  Account(int newID, double newBalance) {
     id = newID;
     balance = newBalance;
   }
@@ -26,7 +26,7 @@ public class Account {
     return balance;
   }
   //Returns annual interest rate
-  public double getannualInterestRate() {
+  public double getAnnualInterestRate() {
     return annualInterestRate;
   }
   //Sets ID

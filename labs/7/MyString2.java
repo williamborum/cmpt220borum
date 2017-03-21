@@ -12,15 +12,19 @@ public class MyString2 {
     this.s = s;
   }
   
+  //Compare the MyString with a given string lexicographically
   public int compare(String s) {
     char[] l = this.s.toCharArray();
     char[] c = s.toCharArray();
+    //Step through the two strings and compare at each char
     for(int x = 0; x < c.length; x++) {
       if(c[x] != l[x]) return c[x] - l[x];
     }
+    //If reached, the two are the same string
     return 0;
   }
   
+  //Returns a substring of the MyString2 starting at the index given
   public MyString2 substring(int begin) {
     char[] l = this.s.toCharArray();
     String tmp = "";
@@ -31,6 +35,7 @@ public class MyString2 {
     return t;
   }
   
+  //Returns the Uppercase of all chars in MyString2
   public MyString2 toUpperCase() {
     char[] l = this.s.toCharArray();
     String tmp = "";
@@ -45,14 +50,17 @@ public class MyString2 {
     return t;
   }
   
+  //Returns a char[] of the string in MyString2
   public char[] toChars() {
     return this.s.toCharArray();
   }
   
+  //Returns the string in MyString2
   public String toString() {
     return this.s;
   }
   
+  //Returns a MyString2 of a true or false boolean
   public static MyString2 valueOf(boolean b) {
     MyString2 t = new MyString2("true");
     MyString2 f = new MyString2("false");
@@ -61,6 +69,7 @@ public class MyString2 {
   }
   
   
+  //Display the results
   public static void main(String[] args) {
     MyString2 h = new MyString2("hello");
     System.out.println(h.compare("opensesame"));

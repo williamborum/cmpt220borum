@@ -57,17 +57,18 @@ public class MyInteger {
   
   //Converts a char[] into an integer
   public static int parseInt(char[] p) {
-    String tmp = "";
+    int tmp = 0;
     for(char c : p) {
+      tmp *= 10;
       int j = Character.getNumericValue(c);
       tmp += j;
     }
-    return Integer.parseInt(tmp);
+    return tmp;
   }
   
   //Converts a String into an integer
   public static int parseInt(String p) {
-    return Integer.parseInt(p);
+    return parseInt(p.toCharArray());
   }
   
   
@@ -104,6 +105,7 @@ public class MyInteger {
     else System.out.print(" does not equal " + parseInt(tmp2));
     System.out.print(". \n");
     
+    System.out.println(parseInt(tmp) + " and " + parseInt(tmp2));
   }
   
   //Display the results

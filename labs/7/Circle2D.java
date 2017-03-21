@@ -31,22 +31,27 @@ public class Circle2D {
     this.radius = radius;
   }
   
+  //Get the area of the circle
   public double getArea() {
     return radius * radius * Math.PI;
   }
   
+  //Get the perimeter of the circle
   public double getPerimeter() {
     return 2 * radius * Math.PI;
   }
   
+  //Get the distance from the midpoint of the circle to another point
   private double distance(double a, double b) {
     return Math.sqrt(Math.pow((a-x),2) + Math.pow((b-y),2));
   }
   
+  //Returns whether a point is contained in the circle or not
   public boolean contains(double a, double b) {
     return distance(a,b) <= radius;
   }
   
+  //Returns whether a circle is contained in another circle or not
   public boolean contains(Circle2D circ) {
     double a = circ.getX();
     double b = circ.getY();
@@ -54,6 +59,7 @@ public class Circle2D {
     return ((distance(a,b) + z) <= radius);
   }
   
+  //Returns whether a circle overlaps another circle or not
   public boolean overlaps(Circle2D circ) {
     double a = circ.getX();
     double b = circ.getY();
@@ -62,6 +68,7 @@ public class Circle2D {
   }
 
   public static void main(String[] args) {
+    //Display results
     Circle2D c1 = new Circle2D(2, 2, 5.5);
     System.out.println("Circle c1 has an area of " + c1.getArea() + " and a perimeter of " + c1.getPerimeter());
     

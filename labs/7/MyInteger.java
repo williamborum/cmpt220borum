@@ -12,27 +12,33 @@ public class MyInteger {
     value = newValue;
   }
   
+  //Get the value of the MyInteger
   public int getValue() {
     return value;
   }
-
+  
+  //Set the value
   public void setValue(int value) {
     this.value = value;
   }
   
+  //Returns whether or not the value is even/odd
   public boolean isEven() {return value%2 == 0;}
   public boolean isOdd() {return value%2 == 1;}
   
+  //Returns whether or not the value is a prime number
   public boolean isPrime() {
     for(int x=2; x < value; x++) {
       if(value%x == 0) return false;
     }
     return true;
   }
-
+  
+  //Returns whether or not the value is even/odd
   public static boolean isEven(int v) {return v%2 == 0;}
   public static boolean isOdd(int v) {return v%2 == 0;}
   
+  //Returns whether or not the value is a prime number
   public static boolean isPrime(int v) {
     for(int x=2; x < v; x++) {
       if(v%x == 0) return false;
@@ -40,13 +46,16 @@ public class MyInteger {
     return true;
   }
   
+  //Returns whether or not the value is even/odd/prime
   public static boolean isEven(MyInteger m) {return m.isEven();}
   public static boolean isOdd(MyInteger m) {return m.isOdd();}
   public static boolean isPrime(MyInteger m) {return m.isPrime();}
   
+  //Returns whether or not the value is equal to an integer or MyInteger value
   public boolean equals(int i) {return value == i;}
   public boolean equals(MyInteger m) {return value == m.getValue();}
   
+  //Converts a char[] into an integer
   public static int parseInt(char[] p) {
     String tmp = "";
     for(char c : p) {
@@ -56,11 +65,13 @@ public class MyInteger {
     return Integer.parseInt(tmp);
   }
   
+  //Converts a String into an integer
   public static int parseInt(String p) {
     return Integer.parseInt(p);
   }
   
   
+  //Displays the results given a MyInteger
   public static void displayResults(MyInteger m) {
     System.out.print("We created an integer of value " + m.getValue() + ", which is ");
     if(m.isEven()) System.out.print("even");
@@ -95,6 +106,7 @@ public class MyInteger {
     
   }
   
+  //Display the results
   public static void main(String[] args) {
     MyInteger m = new MyInteger(7);
     displayResults(m);

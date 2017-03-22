@@ -17,11 +17,17 @@ public class MyString2 {
     char[] l = this.s.toCharArray();
     char[] c = s.toCharArray();
     //Step through the two strings and compare at each char
-    for(int x = 0; x < c.length; x++) {
+    for(int x = 0; x < Math.min(c.length, l.length); x++) {
       if(c[x] != l[x]) return c[x] - l[x];
     }
-    //If reached, the two are the same string
-    return 0;
+    //If reached, the two are either the same string or have the same beginning chars
+    if(c.length > l.length) {
+      return '9' - c[l.length];
+    }
+    else if(c.length < l.length) {
+      return l[c.length] - '9';
+    }
+    else return 0;
   }
   
   //Returns a substring of the MyString2 starting at the index given

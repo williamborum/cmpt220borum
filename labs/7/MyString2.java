@@ -79,6 +79,7 @@ public class MyString2 {
   public static void main(String[] args) {
     MyString2 h = new MyString2("hello");
     System.out.println(h.compare("opensesame"));
+    System.out.println(h.compare("helloooo"));
     System.out.println(h.toUpperCase().toString());
     System.out.println(valueOf(h.compare("opensesame") > 0));
     System.out.println(valueOf(h.compare("opensesame") < 0));

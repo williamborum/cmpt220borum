@@ -49,6 +49,7 @@ public class StackOfIntegers {
     return size;
   }
   
+  //Returns a nicely formatted list for the StackOfIntegers
   public String toString() {
     String t = "[";
     for(int i : elements) {
@@ -59,7 +60,7 @@ public class StackOfIntegers {
   }
   
   
-  
+  //Gets the least common factor of an integer
   public static int getLCF(int num) {
     for(int x=2; x <= num; x++) {
       if(num%x == 0) return x;
@@ -67,6 +68,7 @@ public class StackOfIntegers {
     return -1;
   }
   
+  //Gets the factors in ascending order of an integer
   public static StackOfIntegers getFactors(int g) {
     int tmp = g;
     StackOfIntegers stack = new StackOfIntegers();
@@ -79,6 +81,7 @@ public class StackOfIntegers {
     return stack;
   }
   
+  //Reverses a StackOfIntegers
   public StackOfIntegers reverseStack(StackOfIntegers tmp) {
     StackOfIntegers stack = new StackOfIntegers();
     while(!tmp.empty()) {
@@ -95,6 +98,7 @@ public class StackOfIntegers {
     int number = input.nextInt();
     StackOfIntegers s = getFactors(number);
     
+    //Display the results
     System.out.println("The factors of " + number + " are " + s.toString());
     System.out.println("The reverse is " + s.reverseStack(s).toString());
   }

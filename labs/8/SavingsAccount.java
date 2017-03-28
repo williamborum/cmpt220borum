@@ -13,7 +13,7 @@ public class SavingsAccount extends Account {
     this.overdraftWarning = overdraftWarning;
   }
   
-  public double getOverdraftLimit() {
+  public double getOverdraftWarning() {
     return overdraftWarning;
   }
   
@@ -27,7 +27,7 @@ public class SavingsAccount extends Account {
   
   
   public String toString() {
-    return super.toString() + ", and it has a " + getOverdraftLimit() + " dollar overdraft limit.";
+    return super.toString() + ", and it has a " + getOverdraftWarning() + " dollar overdraft limit.";
   }
   
   

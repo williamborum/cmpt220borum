@@ -40,7 +40,7 @@ public class Triangle extends SimpleGeometricObject {
   }
   
   public static void main(String[] args) {
-  //Create a Scanner
+    //Create a Scanner
     Scanner input = new Scanner(System.in);
     System.out.println("Enter three sides of the triangle, a color, and a T or F to "
         + "indicate whether the triangle is filled: ");

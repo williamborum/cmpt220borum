@@ -3,25 +3,25 @@
 //Exercise 11.3
 
 public class SavingsAccount extends Account {
-  private double overdraftLimit = 0;
+  private double overdraftWarning = 0;
   
   SavingsAccount() {
     
   }
   
   SavingsAccount(double overdraftLimit) {
-    this.overdraftLimit = overdraftLimit;
+    this.overdraftWarning = overdraftLimit;
   }
   
   public double getOverdraftLimit() {
-    return overdraftLimit;
+    return overdraftWarning;
   }
   
   //Withdraw money from the account, warn customer of fees
   @Override
   public void withdraw(double amount) {
     double balance = super.getBalance();
-    if(balance - amount < -overdraftLimit) System.out.println("Overdrafted, may be subject to fees.");
+    if(balance - amount < -overdraftWarning) System.out.println("Overdrafted, may be subject to fees.");
     super.setBalance(balance - amount);
   }
   

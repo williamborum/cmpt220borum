@@ -9,8 +9,8 @@ public class SavingsAccount extends Account {
     
   }
   
-  SavingsAccount(double overdraftLimit) {
-    this.overdraftWarning = overdraftLimit;
+  SavingsAccount(double overdraftWarning) {
+    this.overdraftWarning = overdraftWarning;
   }
   
   public double getOverdraftLimit() {

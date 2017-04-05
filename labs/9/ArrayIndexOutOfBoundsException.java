@@ -20,6 +20,8 @@ public class ArrayIndexOutOfBoundsException {
       int y = input.nextInt();
       
       System.out.println("The random integer at index " + y + " is " + a[y]);
+
+      input.close();
     }
     catch (java.lang.ArrayIndexOutOfBoundsException e) {
       System.out.println("Invalid index: " + e);

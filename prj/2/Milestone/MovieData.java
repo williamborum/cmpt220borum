@@ -98,7 +98,7 @@ public class MovieData {
   
   public String prettyPrint() {
     return title + ", released " + released + ", directed by " + director + " and starring " + actors + 
-        ".\n" + plot + " in this " + rated + " rated " + runtime + " " + genre + " " + type + ". ";
+        ".\n" + plot + " It is a " + rated + " rated " + runtime + " " + genre + " " + type + ". ";
   }
   
   

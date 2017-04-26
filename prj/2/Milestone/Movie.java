@@ -43,11 +43,11 @@ public class Movie {
   }
   
   private static URL urlMaker(String title) throws MalformedURLException {
-    return new URL(BASE_URL + "t=" + title.replaceAll(" ", "+"));
+    return new URL(BASE_URL + "t=" + title.replaceAll(" ", "+") + "&type=movie");
   }
   
   private static URL urlMaker(String title, int year) throws MalformedURLException {
-    return new URL(BASE_URL + "t=" + title.replaceAll(" ", "+") + "&y=" + year);
+    return new URL(BASE_URL + "t=" + title.replaceAll(" ", "+") + "&y=" + year + "&type=movie");
   }
   
   private static MovieData createMovieInstance(JSONObject j) throws JSONException {
@@ -60,10 +60,11 @@ public class Movie {
     String rated = j.getString("Rated");
     String genre = j.getString("Genre");
     String actors = j.getString("Actors");
-    double imdbRating = Double.parseDouble(j.getString("imdbRating"));
+    String imdbRating = j.getString("imdbRating");
     String released = j.getString("Released");
     String type = j.getString("Type");
-    movieData = new MovieData(title, year, director, runtime, plot, rated, genre, actors, imdbRating, released, type);
+    String imdbID = j.getString("imdbID");
+    movieData = new MovieData(title, year, director, runtime, plot, rated, genre, actors, imdbRating, released, type, imdbID);
     return movieData;
   }
   
@@ -175,6 +176,31 @@ public class Movie {
     }
     return -1;
   }
+  
+//  public static boolean gotoIMDB(MovieData movieData) {
+//    @SuppressWarnings("resource")
+//    Scanner scanner3 = new Scanner(System.in);
+//    System.out.println("Would you like to see more about this movie? (y/n) "); 
+//    
+//    String c = scanner3.next();
+//    if(c.toLowerCase().charAt(0) == 'y') {
+//      openWebpage("http://www.imdb.com/title/" + movieData.getIMDBID());
+//      return true;
+//    }
+//    return false;
+//  }
+  
+  public static boolean yesOrNo() {
+    @SuppressWarnings("resource")
+    Scanner scanner3 = new Scanner(System.in);
+    System.out.println("Would you like to see more about this movie? (y/n) "); 
+    
+    String c = scanner3.next();
+    if(c.toLowerCase().charAt(0) == 'y') return true;
+    return false;
+  }
+  
+  
 
   public static void main(String[] args) throws MalformedURLException, IOException, JSONException {
     String areaCode = getAreaCode();
@@ -194,6 +220,8 @@ public class Movie {
     
     System.out.println(m.prettyPrint());
     
+    //gotoIMDB(m);
+    if(yesOrNo()) openWebpage("http://www.imdb.com/title/" + m.getIMDBID());
     
   }
 

@@ -9,9 +9,10 @@ public class MovieData {
   private String rated = "";
   private String genre = "";
   private String actors = "";
-  private double imdbRating = 0.0;
+  private String imdbRating = "";
   private String released = "";
   private String type = "";
+  private String imdbID = "";
   
   private ArrayList<Object> tmp = new ArrayList<Object>();
   
@@ -19,7 +20,7 @@ public class MovieData {
     
   }
   
-  public MovieData(String title, String year, String director, String runtime, String plot, String rated, String genre, String actors, double imdbRating, String released, String type) {
+  public MovieData(String title, String year, String director, String runtime, String plot, String rated, String genre, String actors, String imdbRating, String released, String type, String imdbID) {
     this.title = title;
     this.year = year;
     this.director = director;
@@ -31,6 +32,7 @@ public class MovieData {
     this.imdbRating = imdbRating;
     this.released = released;
     this.type = type;
+    this.imdbID = imdbID;
   }
   
   public String getTitle() {
@@ -65,7 +67,7 @@ public class MovieData {
     return actors;
   }
   
-  public double getIMDBRating() {
+  public String getIMDBRating() {
     return imdbRating;
   }
   
@@ -75,6 +77,10 @@ public class MovieData {
   
   public String getType() {
     return type;
+  }
+  
+  public String getIMDBID() {
+    return imdbID;
   }
   
   public ArrayList<Object> getList() {
@@ -89,6 +95,7 @@ public class MovieData {
     tmp.add(actors);
     tmp.add(imdbRating);
     tmp.add(released);
+    tmp.add(imdbID);
     return tmp;
   }
   

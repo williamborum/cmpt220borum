@@ -190,14 +190,38 @@ public class Movie {
 //    return false;
 //  }
   
-  public static boolean yesOrNo() {
+  public static boolean yesOrNo(String question) {
     @SuppressWarnings("resource")
     Scanner scanner3 = new Scanner(System.in);
-    System.out.println("Would you like to see more about this movie? (y/n) "); 
+    System.out.println(question + " (y/n) "); 
     
     String c = scanner3.next();
     if(c.toLowerCase().charAt(0) == 'y') return true;
     return false;
+  }
+  
+  
+  public static void m2(ArrayList<String> movieList, String areaCode) throws MalformedURLException, IOException, JSONException {
+    String choice  = removeYear(movieList.get(askUser(movieList)));
+    
+    JSONObject j = readJsonFromUrl(urlMaker(choice));
+    
+    MovieData m = createMovieInstance(j);
+    if(Integer.parseInt(m.getYear().substring(0, 4)) < 2016) {
+      j = readJsonFromUrl(urlMaker(choice, 2017));
+      //System.out.println(urlMaker(choice, 2017));
+      m = createMovieInstance(j);
+    }
+    
+    System.out.println(m.prettyPrint());
+    
+    //gotoIMDB(m);
+    if(yesOrNo("Would you like to see more about this movie?")) openWebpage("http://www.imdb.com/title/" + m.getIMDBID());
+    
+    if(yesOrNo("Would you like to see times or buy tickets for this movie?")) openWebpage("http://www.fandango.com/" + areaCode + "_movietimes");
+    else m2(movieList, areaCode);
+    
+    if(yesOrNo("Would you like to see times or buy tickets for this movie?")) m2(movieList, areaCode);
   }
   
   
@@ -221,8 +245,12 @@ public class Movie {
     System.out.println(m.prettyPrint());
     
     //gotoIMDB(m);
-    if(yesOrNo()) openWebpage("http://www.imdb.com/title/" + m.getIMDBID());
+    if(yesOrNo("Would you like to see more about this movie?")) openWebpage("http://www.imdb.com/title/" + m.getIMDBID());
     
+    if(yesOrNo("Would you like to see times or buy tickets for this movie?")) openWebpage("http://www.fandango.com/" + areaCode + "_movietimes");
+    else m2(currentMovies, areaCode);
+    
+    if(yesOrNo("Would you like to see the list of movies again?")) m2(currentMovies, areaCode);
   }
 
 }
